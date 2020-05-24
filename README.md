@@ -1,3 +1,18 @@
+Forked from [daveho/eeprog](https://github.com/daveho/eeprog).  
+
+The original repo uses the 74HCT165 (PISO) shift register to read from the EEPROM, but I did not
+have it at hand. In this fork the code has been slightly adapted to connect the nano directly to the I/O pins of the EEPROM. The address lines 
+are connected via two 74HC595 (SIPO) shift register as in the original design.
+The only changes required are in the code uploaded in the arduino. Instead of changing the code there, I left the original structure from the repo
+and added the folder eeprog-napicella which contains the modified code plus the platformio.ini config which makes the code easier to upload to the
+nano using PlatformIO.
+
+The circuit has been constructed on a breadboard:
+
+> ![picture of eeprog hardware](img/eeprog-napicella.jpg)
+
+Follow the original README.
+
 # 28C64/28C256 EEPROM programmer
 
 This is an attempt to make a programmer for 28C64 and 28C256 EEPROMs using an Arduino Nano and 74HC595/74HCT165 shift registers.
